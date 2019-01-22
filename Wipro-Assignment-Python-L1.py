@@ -337,3 +337,132 @@ check_prime(int(input("Please enter a number")))
 range_prime(int(input("Enter the range")))
 
 #Assignment 17
+
+num=int(input("Please enter the range"))
+lst=[]
+a=0
+try:
+    for i in range(num):
+        a=int(input("Please enter numbers to find big and small no"))
+        lst.append(a)
+    print(lst)
+    print("The biggest number of the input is :",max(lst))
+    print("The smallest number of the input is : ",min(lst))
+except ValueError:
+    print("Enter valid values")
+    
+#Assignment 18
+
+def print_for_while():
+    for i in range(1,100+1):
+        print(i)
+
+    i=1
+    while i <= 100:
+        print(i)
+        i +=1
+
+def print_reverse():
+    for i in range(100,0,-1):
+        print(i)
+    
+    i=100
+    while i >= 1:
+        print(i)
+        i -=1
+
+let="Hello world"
+def mystring(let):
+    for i in let:
+        print(i,'\n')
+
+print_for_while()
+print_reverse()
+mystring(let)
+
+#Assignment 19
+
+def print_even():
+    print("The event numbers between 1 and 100 with continue are :")
+    for i in range(1,100+1):
+        if i % 2 !=0:
+            continue
+        else:
+            print (i)
+    print("The event numbers between 1 and 100 with pass are :")
+    for i in range(1,100+1):
+        if i % 2 !=0:
+            pass
+        else:
+            print (i)
+            
+
+def print_break():
+    print("Break once 50 is found ")
+    for i in range(1,101):
+        if i == 50:
+            break
+        elif i % 2 == 0:
+            print(i)
+    print("Print skip 10,20,30,40,50")
+    for i in range(1,101):
+        if i in (10,20,30,40,50):
+            continue
+        elif i % 2 == 0:
+            print(i)
+        else:
+            continue
+            
+def print_while():
+    print("Break once 90 is found with pass ")
+    i=1
+    while i <=100:
+        if i == 90:
+            break
+        if i % 2 == 0:
+            print(i)
+        else:
+            pass
+        i +=1
+        
+    print("Break once 90 is found with continue")
+    i=1
+    while i <=100:
+        if i == 90:
+            break
+        if i % 2 == 0:
+            print(i)
+        elif i in (60,70,80,90):
+            continue
+        i +=1
+
+print_break()
+print_even()
+print_while()
+
+
+#Assignment 20
+
+fib1 =0
+fib2=1
+fb=[]
+sum=0
+try:
+    a = int(input("Please enter a number"))
+    if a <=0 :
+        print("Enter a valid number")
+    elif a == 1:
+        print("The fib series until %d are %d"%(a,fib1))
+    else:
+        for i in range(a):
+            sum=(fib1+fib2)
+            fib1=fib2
+            fib2=sum
+            fb.append(fib1)
+            if fib2 > a:
+                break
+            else:
+                continue
+        print("Fib series until %d "%a,fb)        
+except ValueError:
+    print("Enter valid numbers")
